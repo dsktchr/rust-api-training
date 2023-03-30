@@ -1,0 +1,17 @@
+[package]
+name = "rust-api-server-sample"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+members = ["entity", "migration"]
+
+[dependencies]
+axum = "0.5.16"
+hyper = { version = "0.14.14", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
+tower = "0.4.11"
+tower-http = { version = "0.3.4", features = ["cors"] }
+sea-orm = { version = "^0", features = [ "sqlx-sqlite", "runtime-tokio-rustls", "macros" ] }
